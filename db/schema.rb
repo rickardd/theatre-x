@@ -11,7 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160726054613) do
+ActiveRecord::Schema.define(version: 20160726142029) do
+
+  create_table "show_dates", force: :cascade do |t|
+    t.string   "date"
+    t.boolean  "soldOut"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "show_id"
+  end
+
+  create_table "show_prices", force: :cascade do |t|
+    t.integer  "price"
+    t.string   "description"
+    t.integer  "show_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.boolean  "primary"
+  end
 
   create_table "shows", force: :cascade do |t|
     t.string   "title"

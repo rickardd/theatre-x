@@ -1,0 +1,15 @@
+
+<% if prices %>
+  <div class="booking-price">
+    <% prices.each do |price| %>
+      <div class="price">
+      <% if price.primary  %>
+        <span class="price__value"><%= price.price %>:-</span>
+      <% else %>
+        <span class="price__value price__value--small"><%= price.price %>:-</span>
+      <% end %>
+        <%= price.description %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

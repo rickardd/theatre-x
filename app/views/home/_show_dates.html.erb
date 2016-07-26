@@ -1,0 +1,33 @@
+
+<% if dates %>
+  <dl class="description-list description-list--highlight clearfix">
+    <% dates.each do |date| %>
+    <dt class="description-term"><%= date.date %></dt>
+      <dd class="description-data">
+        <% if !date.soldOut %>
+          <a href="#" class="icon-button icon-button--green price-button js-scroll-link" data-target="section-4" >
+            <div class="texticon texticon--18 clearfix">
+              <div class="texticon__icon">
+                <i class="glyphicon glyphicon-ok"></i>
+              </div>
+              <div class="texticon__text">
+                Boka
+              </div>
+            </div>
+          </a>
+        <% else %>
+          <span href="#" class="icon-button icon-button--red-stroke price-button" data-target="section-4" >
+            <div class="texticon texticon--18 clearfix">
+              <div class="texticon__icon">
+                <i class="glyphicon glyphicon-remove"></i>
+              </div>
+              <div class="texticon__text">
+                Utsålt
+              </div>
+            </div>
+          </span>
+        <% end %>
+      </dd>
+    <% end %>
+  </dl>
+<% end -%>

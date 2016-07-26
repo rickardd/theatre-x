@@ -1,0 +1,34 @@
+
+<section class="section section--white" id="section-1">
+  <div class="grid clearfix">
+    <heading class="column column--12 column--first column--last">
+      <h1 class="h1 block-header">Föreställningar</h1>
+    </heading>
+  </div>
+
+  <!-- Listing all shows -->
+  <% @shows.each do |show|  %>
+    <!-- TODO REMOVE .sub-section--border on first loop -->
+    <% if show.display %>
+      <article class="sub-section sub-section--border">
+        <div class="grid clearfix">
+          <div class="column column--6 column--last typography">
+            <img class="soft-edges full-width" src="<%= show.image %>" alt="<%= show.title %>">
+          </div>
+          <div class="column column--6 column--first typography">
+            <heading>
+              <h1 class="h1"><%= show.title %></h1>
+            </heading>
+            <p><%= show.description %></p>
+            <% if show.ShowDates.count > 0 || show.ShowPrices.count > 0 %>
+              <div class="calendar clearfix">
+                <%= render 'show_dates', dates: show.ShowDates %>
+                <%= render 'show_prices', prices: show.ShowPrices %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </article>
+    <% end %>
+  <% end %>
+</section>
