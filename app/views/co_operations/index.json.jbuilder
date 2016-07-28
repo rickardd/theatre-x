@@ -1,0 +1,1 @@
+json.array! @co_operations, partial: 'co_operations/co_operation', as: :co_operation

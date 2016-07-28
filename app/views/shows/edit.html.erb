@@ -1,6 +1,26 @@
-<h1>Editing Show</h1>
 
-<%= render 'form' %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-2">
+      <h1 class="h1">Editing Show</h1>
+    </div>
+  </div>
 
-<%= link_to 'Show', @show %> |
-<%= link_to 'Back', shows_path %>
+  <div class="row">
+    <div class="col-md-12">
+      <%= render 'form' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-10 col-md-offset-2">
+      <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
+      <%= link_to 'View Show', @show, class: "btn btn-default" %>
+      <%= link_to 'View All Shows', shows_path, class: "btn btn-default" %>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+

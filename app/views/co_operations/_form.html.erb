@@ -1,0 +1,52 @@
+<%= form_for @co_operation, html: { class: "form-horizontal"} do |f| %>
+  <% if @co_operation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@co_operation.errors.count, "error") %> prohibited this show from being saved:</h2>
+
+      <ul>
+      <% @co_operation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :title, class: "col-md-2 control-label" %>
+    <div class="col-md-10">
+      <%= f.text_field :title, class: "form-control", placeholder: "Title of show" %>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <%= f.label :column_1, class: "col-md-2 control-label" %>
+    <div class="col-md-10">
+      <%= f.text_area :column_1, rows: 6, class: "form-control", placeholder: "column_1 of show" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :column_2, class: "col-md-2 control-label" %>
+    <div class="col-md-10">
+      <%= f.text_field :column_2, class: "form-control", placeholder: "column_2 of show" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :image, class: "col-md-2 control-label" %>
+    <div class="col-md-10">
+      <%= f.text_field :image, class: "form-control", placeholder: "image of show" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-10 col-md-offset-2">
+    <%= f.submit class: "btn btn-primary" %>
+    </div>
+  </div>
+
+<% end %>
+
+
+

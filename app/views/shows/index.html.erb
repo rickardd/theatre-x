@@ -1,33 +1,36 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <p id="notice"><%= notice %></p>
+    </div>
+  </div>
 
-<h1>Listing Shows</h1>
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Listing Shows</h1>
+    </div>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Image</th>
-      <th>Display</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="list-group">
+      <!-- ToDo: toggle the active class on one line -->
+      <% @shows.each do |show| %>
+          <% if show.display  %>
+          <%= link_to show.title, show_path( show ), class: "list-group-item active" %>
+          <% else %>
+          <%= link_to show.title, show_path( show ), class: "list-group-item" %>
+          <% end %>
+      <% end %>
+      </div>
+    </div>
+  </div>
 
-  <tbody>
-    <% @shows.each do |show| %>
-      <tr>
-        <td><%= show.title %></td>
-        <td><%= show.description %></td>
-        <td><%= show.image %></td>
-        <td><%= show.display %></td>
-        <td><%= link_to 'Show', show %></td>
-        <td><%= link_to 'Edit', edit_show_path(show) %></td>
-        <td><%= link_to 'Destroy', show, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="row">
+    <div class="col-md-12">
+      <%= link_to 'New Show', new_show_path, class: "btn btn-primary" %>
+    </div>
+  </div>
 
-<br>
+</div>
 
-<%= link_to 'New Show', new_show_path %>

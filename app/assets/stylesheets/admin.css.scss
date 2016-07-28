@@ -1,0 +1,19 @@
+
+$navbar-default-bg: #fff;
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.body{
+  padding: 12px 48px;
+  background-color: #000;
+}
+
+.admin-container{
+  background-color: #fff;
+  position: relative;
+}
+
+.container{
+  padding: 24px;
+}

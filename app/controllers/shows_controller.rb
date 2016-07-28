@@ -4,7 +4,7 @@ class ShowsController < ApplicationController
   # GET /shows
   # GET /shows.json
   def index
-    @shows = Show.find(2)
+    @shows = Show.all
   end
 
   # GET /shows/1
@@ -19,6 +19,7 @@ class ShowsController < ApplicationController
 
   # GET /shows/1/edit
   def edit
+
   end
 
   # POST /shows
@@ -40,6 +41,7 @@ class ShowsController < ApplicationController
   # PATCH/PUT /shows/1
   # PATCH/PUT /shows/1.json
   def update
+
     respond_to do |format|
       if @show.update(show_params)
         format.html { redirect_to @show, notice: 'Show was successfully updated.' }

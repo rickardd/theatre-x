@@ -6,14 +6,9 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-HOME LAYOUT
+<body class="body">
 
 <%= yield %>
-
-
-
 
   <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
@@ -34,6 +29,8 @@ HOME LAYOUT
 
     $(".js-scroll-link").click( function( event ){
       event.preventDefault();
+
+      alert("click")
 
       $(".section").removeClass("fadeOut");
       console.log('click', this);

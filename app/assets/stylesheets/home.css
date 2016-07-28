@@ -1,3 +1,5 @@
+
+
 html,body{ background-color: #5a1f0d; }
 .body{
   /*background-image: url('/Users/rickarddahlstrom/web-projects/Anja/img/back_22.jpg');
@@ -381,18 +383,7 @@ dl{ box-sizing: border-box; }
   color: #b27633;
 }*/
 
-.font-green{
-  color: green;
-}
-.font-red{
-  color: #9a1717;
-}
-.font-orange{
-  color: #b27633;
-}
-.font-bold{
-  font-weight: bold;
-}
+
 
 .footer{
   position: fixed;

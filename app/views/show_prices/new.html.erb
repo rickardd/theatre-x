@@ -1,0 +1,30 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-2">
+      <h1 class="h1">Create a price</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <%= form_for @price,
+            :url => url_for(:controller => 'show_prices', :action => 'create', :method => 'post'),
+            html: { class: "form-horizontal"} do |f| %>
+        <%= render 'form', f: f, price: @price %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-10 col-md-offset-2">
+      <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
+        <%= link_to "View Show", show_path( id: @show_id ), class: "btn btn-default" %>
+        <%= link_to "View All Shows", shows_path, class: "btn btn-default" %>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+

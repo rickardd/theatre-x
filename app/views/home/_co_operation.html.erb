@@ -1,22 +1,19 @@
 
-      <section class="section section--white" id="section-5">
-        <div class="grid clearfix">
-          <heading class="column column--12 column--first column--last">
-            <h1 class="h1 block-header">Samarbete</h1>
-          </heading>
-        </div>
-        <div class="grid clearfix">
-          <div class="column column--4 column--first">
-            <img class="soft-edges full-width" src="http://placekitten.com/410/270" alt="">
-          </div>
-          <div class="column column--4 column--last typography">
-            <p> Teater (namn) söker ständigt nya samarbetspartner eller medverkande. Just nu finns behov av manusförfattare som kan skriva ihop med en annan författare. Till sommar uppsättningen 2017. Vi tror att arbetet och resultatet blir bättre och mer lustfyllt med fler kockar.</p>
-          </div>
-          <div class="column column--4 column--last typography">
-          <p>Behovet finns också av två stycken skådespelare till sommaren 2017
-              Skicka ditt cv och personligt brev till mail: (namn)
-              En stort plus är om du har eget företag, men inget krav.</p>
-
-          </div>
-        </div>
-      </section>
+<section class="section section--white" id="section-5">
+  <div class="grid clearfix">
+    <heading class="column column--12 column--first column--last">
+      <h1 class="h1 block-header"><%= @co_operation.title %></h1>
+    </heading>
+  </div>
+  <div class="grid clearfix">
+    <div class="column column--4 column--first">
+    <%= image_tag @co_operation.image, class: "soft-edges full-width" %>
+    </div>
+    <div class="column column--4 column--last typography">
+      <p><%= @co_operation.column_1 %></p>
+    </div>
+    <div class="column column--4 column--last typography">
+      <p><%= @co_operation.column_2 %></p>
+    </div>
+  </div>
+</section>

@@ -1,7 +1,25 @@
 Rails.application.routes.draw do
 
+  # ToDo: change path name to edit_date
+  get 'shows/:show_id/dates/edit' => 'showdates#edit', as: :show_date
+  patch 'shows/:show_id/dates/update' => 'showdates#update', as: :update_show_date
+  get 'shows/:show_id/dates/new' => 'showdates#new', as: :new_show_date
+  post 'shows/:show_id/dates/create' => 'showdates#create', as: :create_show_date
+  delete 'shows/:show_id/dates/destroy' => 'showdates#destroy', as: :destroy_show_date
+
+  get 'shows/:show_id/prices/edit' => 'show_prices#edit', as: :show_price
+  patch 'shows/:show_id/prices/update' => 'show_prices#update', as: :update_show_price
+  get 'shows/:show_id/prices/new' => 'show_prices#new', as: :new_show_price
+  post 'shows/:show_id/prices/create' => 'show_prices#create', as: :create_show_price
+  delete 'shows/:show_id/prices/destroy' => 'show_prices#destroy', as: :destroy_show_price
 
 
+  # resources :show_prices, path: "/shows/:id/price"
+
+
+  resources :courses
+  resources :co_operations
+  resources :abouts
   resources :shows
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

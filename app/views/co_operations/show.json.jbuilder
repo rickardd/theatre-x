@@ -1,0 +1,1 @@
+json.partial! "co_operations/co_operation", co_operation: @co_operation

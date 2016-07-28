@@ -1,0 +1,39 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-2">
+    <%= @prices.to_json %>
+    <% if @prices.count > 0 %>
+      <h1 class="h1">Edit prices: <%= @prices.first.show.title %></h1>
+    <% else %>
+      <h1 class="h1">Edit prices: <span class="font-red">No prices to edit</span></h1>
+      <%= link_to "Create a price", new_show_price_path  %>
+    <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <% @prices.each do | price | %>
+        <%= form_for price,
+              :url => url_for(:controller => 'show_prices', :action => 'update', :method => 'patch'),
+              html: { class: "form-horizontal"} do |f| %>
+          <%= render 'form', f: f, price: price %>
+        <% end %>
+        <hr>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-10">
+      <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
+        <%= link_to "View Show", show_path( id: @prices.first.show.id ), class: "btn btn-default" %>
+        <%= link_to "View All Shows", shows_path, class: "btn btn-default" %>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+

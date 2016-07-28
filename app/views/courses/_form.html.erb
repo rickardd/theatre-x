@@ -1,0 +1,45 @@
+<%= form_for @course, html: { class: "form-horizontal"} do |f| %>
+  <% if @course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this show from being saved:</h2>
+
+      <ul>
+      <% @course.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :title, class: "col-md-2 control-label" %>
+    <div class="col-md-10">
+      <%= f.text_field :title, class: "form-control", placeholder: "Title of show" %>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <%= f.label :column_1, class: "col-md-2 control-label" %>
+    <div class="col-md-10">
+      <%= f.text_area :column_1, rows: 6, class: "form-control", placeholder: "column_1 of show" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :column_2, class: "col-md-2 control-label" %>
+    <div class="col-md-10">
+      <%= f.text_area :column_2, rows: 6, class: "form-control", placeholder: "column_2 of show" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-10 col-md-offset-2">
+    <%= f.submit class: "btn btn-primary" %>
+    </div>
+  </div>
+
+<% end %>
+
+
+

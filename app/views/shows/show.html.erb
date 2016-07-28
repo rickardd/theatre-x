@@ -1,24 +1,84 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @show.title %>
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <p id="notice"><%= notice %></p>
+    </div>
+  </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @show.description %>
-</p>
+  <div class="row">
+    <div class="col-md-12">
+    <h1 class="h1"><%= @show.title %></h1>
+    </div>
+  </div>
 
-<p>
-  <strong>Image:</strong>
-  <%= @show.image %>
-</p>
+  <div class="row">
+    <div class="col-md-12">
+      <blockquote>
+        <p><%= @show.description %></p>
+      </blockquote>
+      <blockquote>
+        <%= image_tag @show.image, width: 250 %>
+      </blockquote>
+      <blockquote>
+        <p><%= @show.display ? "The show is live" : "The show is listed in the archive" %></p>
+      </blockquote>
+    </div>
+  </div>
 
-<p>
-  <strong>Display:</strong>
-  <%= @show.display %>
-</p>
+  <div class="row">
+    <div class="col-md-12">
+      <blockquote>
+        <h2 class="h3">Dates</h2>
+        <% @show.ShowDates.each do |date| %>
+            <p>
+                <%= date.date %>
+                <% if date.soldOut %>
+                  <span class="font-red">Sold Out</span>
+                <% else %>
+                  <span class="font-green">Still empty seats</span>
+                <% end %>
+            </p>
+        <% end %>
+      </blockquote>
+    </div>
+  </div>
 
-<%= link_to 'Edit', edit_show_path(@show) %> |
-<%= link_to 'Back', shows_path %>
+  <div class="row">
+    <div class="col-md-12">
+      <blockquote>
+        <h2 class="h3">Prices</h2>
+        <% @show.ShowPrices.each do |price| %>
+            <p>
+              <%= price.price %>
+              <%= price.description %>
+            </p>
+        <% end %>
+      </blockquote>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-10">
+      <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
+      <%= link_to 'Edit show', edit_show_path(@show), class: "btn btn-primary" %>
+      <%= link_to 'Create a date', new_show_date_path(@show), class: "btn btn-success" %>
+      <% if @show.ShowDates.count > 0 %>
+        <%= link_to 'Edit dates', show_date_path( :show_id => @show.id ), class: "btn btn-primary" %>
+      <% end %>
+      <%= link_to 'Create a price', new_show_price_path(@show), class: "btn btn-success" %>
+      <% if @show.ShowPrices.count > 0 %>
+        <%= link_to 'Edit prices', show_price_path( :show_id => @show.id ), class: "btn btn-primary" %>
+      <% end %>
+
+      <%= link_to 'Destroy This Show', show_path(@show), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'View All shows', shows_path, class: "btn btn-default" %>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+

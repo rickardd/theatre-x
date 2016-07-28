@@ -1,38 +1,28 @@
-   <section class="section section--white" id="section-3">
-        <div class="grid clearfix">
-          <heading class="column column--12 column--first column--last">
-            <h1 class="h1 block-header">Om Teatern</h1>
-          </heading>
+
+<section class="section section--white" id="section-3">
+  <div class="grid clearfix">
+    <heading class="column column--12 column--first column--last">
+      <h1 class="h1 block-header"><%= @abouts.title %></h1>
+    </heading>
+  </div>
+  <div class="grid clearfix">
+    <div class="column column--6 column--first typography">
+      <p><%= @abouts.column_1 %></p>
+    </div>
+    <div class="column column--6 column--last typography">
+      <p><%= @abouts.column_2 %></p>
+    </div>
+  </div>
+  <div class="sub-section sub-section--border">
+    <div class="profile clearfix">
+      <div class="profile__icon">
+        <div class="round">
+          <%= image_tag @abouts.image, alt: "Annrika Dahlström", class: "media__profile" %>
         </div>
-        <div class="grid clearfix">
-          <div class="column column--6 column--first typography">
-            <p>Teater (namn) är en helt nystartad teater och vänder sig till både barn och vuxna.. Pjäserna är specialskrivna för teatern och integrerar oftast publiken på olika sätt. Teaterns mål är att alltid vara lätt tillgänglig och för alla. Det är två inplanerade produktioner under 2017 en barn teater under vinter/våren och en familjeföreställning i form av vandringsteater på sommaren. Spelplatserna varierar beroende på föreställning.</p>
-          </div>
-          <div class="column column--6 column--last typography">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id dolorem nulla earum autem, dolor rerum illo velit veniam, quam neque, recusandae fugiat voluptates optio dignissimos odit debitis iste inventore a magni quis, ipsum aliquid. Quibusdam nam modi error quasi blanditiis veniam dolorem pariatur velit sunt. Harum dignissimos, laborum quibusdam. Aliquam!</p>
-          </div>
-        </div>
-        <div class="sub-section sub-section--border">
-
-
-
-
-              <div class="profile clearfix">
-                <div class="profile__icon">
-                  <div class="round">
-                    <img class="media__profile" src="app/assets/images/anja.png" alt="Annrika Dahlstrom">
-                  </div>
-                </div>
-                <div class="profile__text typography">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus odio pariatur repudiandae eos vel, porro nequt excepturi minus vel officiis voluptates minima repellat, eos laudantium sequi nesciunt. Ducimus, veniam, porro!</p>
-                </div>
-              </div>
-
-
-
-
-
-
-
-        </div>
-      </section>
+      </div>
+      <div class="profile__text typography">
+        <p><p><%= @abouts.column_3 %></p></p>
+      </div>
+    </div>
+  </div>
+</section>

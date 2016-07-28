@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <p id="notice"><%= notice %></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <% @courses.each do |course| %>
+        <h1 class="h1"><%= course.title %></h1>
+        <blockquote>
+          <p><%= course.column_1 %></p>
+        </blockquote>
+        <blockquote>
+          <p><%= course.column_2 %></p>
+        </blockquote>
+        <div class="btn-group">
+          <%= link_to 'Edit', edit_course_path(course) , class: "btn btn-primary"%>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

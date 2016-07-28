@@ -11,5 +11,8 @@
         <%= price.description %>
       </div>
     <% end %>
+    <% if prices.count === 0 %>
+      <p>Inga priser satta än</p>
+    <% end %>
   </div>
 <% end %>
