@@ -9,14 +9,12 @@
 <body class="body">
 
   <%= render 'admin/navigation' %>
-
   <div class="admin-container">
+    <%= render 'admin/flash_message' %>
     <%= yield %>
-
     <!-- Add = to display params on the page -->
     <% debug(params) if Rails.env.development? %>
   </div>
-
 
 </body>
 </html>

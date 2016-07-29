@@ -10,16 +10,12 @@ class ShowsController < ApplicationController
   # GET /shows/1
   # GET /shows/1.json
   def show
+
   end
 
   # GET /shows/new
   def new
     @show = Show.new
-  end
-
-  # GET /shows/1/edit
-  def edit
-
   end
 
   # POST /shows
@@ -29,7 +25,8 @@ class ShowsController < ApplicationController
 
     respond_to do |format|
       if @show.save
-        format.html { redirect_to @show, notice: 'Show was successfully created.' }
+        flash[:success] = "Show was successfully created."
+        format.html { redirect_to @show }
         format.json { render :show, status: :created, location: @show }
       else
         format.html { render :new }
@@ -38,13 +35,19 @@ class ShowsController < ApplicationController
     end
   end
 
+  # GET /shows/1/edit
+  def edit
+
+  end
+
   # PATCH/PUT /shows/1
   # PATCH/PUT /shows/1.json
   def update
 
     respond_to do |format|
       if @show.update(show_params)
-        format.html { redirect_to @show, notice: 'Show was successfully updated.' }
+        flash[:success] = "Show was successfully updated."
+        format.html { redirect_to @show }
         format.json { render :show, status: :ok, location: @show }
       else
         format.html { render :edit }
@@ -58,7 +61,7 @@ class ShowsController < ApplicationController
   def destroy
     @show.destroy
     respond_to do |format|
-      format.html { redirect_to shows_url, notice: 'Show was successfully destroyed.' }
+      format.html { redirect_to shows_url, success: 'Show was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

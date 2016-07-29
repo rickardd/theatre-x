@@ -11,10 +11,9 @@ class ShowdatesController < ApplicationController
     # ToDo: @date.show_id is not white listed (security hole)
     @date.show_id = params[:show_id]
     if @date.save
-      flash[:notice] = "A date have been added"
+      flash[:success] = "A date was successfully added"
       redirect_to show_path( id: params[:show_id] )
     else
-      flash[:notice] = "Something went wrong, the date is not added"
       render :new
     end
   end
@@ -31,7 +30,7 @@ class ShowdatesController < ApplicationController
 
     # if @date.update( date: "new date", soldOut: true )
     if @date.update_all( date_params )
-      flash[:success] = "One date was successfully updated"
+      flash[:success] = "The date was successfully updated"
       redirect_to show_path( id: params[:show_id] )
     else
       render :edit

@@ -9,6 +9,7 @@ class ShowPricesController < ApplicationController
     @price = ShowPrice.new( price_params )
     @price.show_id = params[:show_id]
     if @price.save
+      flash[:success] = "A new price was successfully added"
       redirect_to show_path( id: params[:show_id] )
     else
       render plain: :failded
@@ -23,6 +24,7 @@ class ShowPricesController < ApplicationController
   def update
     @price = ShowPrice.find( params[:id] )
     if @price.update( price_params )
+      flash[:success] = "The price was successfully updated"
       redirect_to show_path( id: params[:show_id] )
     else
       render plain: :failded
@@ -32,7 +34,7 @@ class ShowPricesController < ApplicationController
   def destroy
     @price = ShowPrice.find( params[:id] )
     if @price.destroy
-      flash[:notice] = "Price have been deleted"
+      flash[:success] = "A price have been deleted"
       redirect_to show_path( id: @price.show.id )
     else
 
