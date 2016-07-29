@@ -1,18 +1,18 @@
-  <%= price.id %>
+
   <%= hidden_field_tag :id, price.id  %>
   <%= hidden_field_tag :show_id, @show_id  %>
 
   <div class="form-group">
     <%= f.label :price, class: "col-md-2 control-label" %>
     <div class="col-md-10">
-      <%= f.text_field :price, class: "form-control", placeholder: "price of show" %>
+      <%= f.text_field :price, class: "form-control", placeholder: "Only numbers between 0-9999" %>
     </div>
   </div>
 
   <div class="form-group">
     <%= f.label :description, class: "col-md-2 control-label" %>
     <div class="col-md-10">
-      <%= f.text_field :description, class: "form-control", placeholder: "description of show" %>
+      <%= f.text_field :description, class: "form-control", placeholder: "E.g Mängdrabatt minst 10 biljetter." %>
     </div>
   </div>
 

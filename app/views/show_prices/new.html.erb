@@ -1,4 +1,6 @@
 
+<%= render 'admin/error_messages', obj: @price %>
+
 <div class="container">
   <div class="row">
     <div class="col-md-10 col-md-offset-2">
@@ -9,7 +11,7 @@
   <div class="row">
     <div class="col-md-12">
       <%= form_for @price,
-            :url => url_for(:controller => 'show_prices', :action => 'create', :method => 'post'),
+            url: create_show_price_path,
             html: { class: "form-horizontal"} do |f| %>
         <%= render 'form', f: f, price: @price %>
       <% end %>
@@ -17,9 +19,9 @@
   </div>
 
   <div class="row">
-    <div class="col-md-10 col-md-offset-2">
+    <div class="col-md-12">
       <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
-        <%= link_to "View Show", show_path( id: @show_id ), class: "btn btn-default" %>
+        <%= link_to "View Show", show_path( { id: @show_id } ), class: "btn btn-default" %>
         <%= link_to "View All Shows", shows_path, class: "btn btn-default" %>
       </div>
     </div>

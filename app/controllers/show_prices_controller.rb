@@ -8,11 +8,12 @@ class ShowPricesController < ApplicationController
   def create
     @price = ShowPrice.new( price_params )
     @price.show_id = params[:show_id]
+    @show_id = params[:show_id]
     if @price.save
       flash[:success] = "A new price was successfully added"
       redirect_to show_path( id: params[:show_id] )
     else
-      render plain: :failded
+      render :new
     end
   end
 
@@ -27,7 +28,10 @@ class ShowPricesController < ApplicationController
       flash[:success] = "The price was successfully updated"
       redirect_to show_path( id: params[:show_id] )
     else
-      render plain: :failded
+      flash[:errors] = { errors: @price.errors }
+
+      redirect_to show_price_path
+      # render :edit
     end
   end
 

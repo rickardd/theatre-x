@@ -43,7 +43,6 @@ class ShowsController < ApplicationController
   # PATCH/PUT /shows/1
   # PATCH/PUT /shows/1.json
   def update
-
     respond_to do |format|
       if @show.update(show_params)
         flash[:success] = "Show was successfully updated."

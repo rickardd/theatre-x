@@ -7,14 +7,23 @@ class ShowdatesController < ApplicationController
   end
 
   def create
+
     @date = ShowDate.new( date_params )
+    puts '------------------------------------'
+    puts date_params
+    puts @date.soldOut
+    puts @date.date
+    puts @date.show_id
+    puts @date.to_json
+    puts '------------------------------------'
     # ToDo: @date.show_id is not white listed (security hole)
-    @date.show_id = params[:show_id]
+    # @date.show_id = params[:show_id]
     if @date.save
       flash[:success] = "A date was successfully added"
       redirect_to show_path( id: params[:show_id] )
     else
-      render :new
+      @show_id = params[:show_id]
+      render 'shows/new_date'
     end
   end
 
@@ -30,6 +39,7 @@ class ShowdatesController < ApplicationController
 
     # if @date.update( date: "new date", soldOut: true )
     if @date.update_all( date_params )
+      debugger
       flash[:success] = "The date was successfully updated"
       redirect_to show_path( id: params[:show_id] )
     else
