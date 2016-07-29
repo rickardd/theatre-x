@@ -2,63 +2,68 @@
 <%= render 'admin/error_messages', obj: @show%>
 
 <div class="container">
+
   <div class="row">
     <div class="col-md-12">
-      <p id="notice"><%= notice %></p>
+      <blockquote>
+        <h1 class="h1"><%= @show.title %></h1>
+      </blockquote>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-12">
-    <h1 class="h1"><%= @show.title %></h1>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-6">
       <blockquote>
         <p><%= @show.description %></p>
       </blockquote>
       <blockquote>
         <%= image_tag @show.image, width: 250 %>
       </blockquote>
-      <blockquote>
-        <p><%= @show.display ? "The show is live" : "The show is listed in the archive" %></p>
-      </blockquote>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-6">
+      <blockquote>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              <%= content_tag :span, "", class: @show.display ? "glyphicon glyphicon-fire" : "glyphicon glyphicon-folder-open" %>
+              <%= @show.display ? "The show is hot as fire" : "The show is very old and listed in the archive" %>
+            </h3>
+          </div>
+          <div class="panel-body">
+            Shows listend in the archive will only be displayd in the archive section, no dates or prices will be shown.
+          </div>
+        </div>
+      </blockquote>
       <blockquote>
         <h2 class="h3">Dates</h2>
-        <% @show.ShowDates.each do |date| %>
-            <p>
-                <%= date.date %>
-                <% if date.soldOut %>
-                  <span class="font-red">Sold Out</span>
-                <% else %>
-                  <span class="font-green">Still empty seats</span>
-                <% end %>
-            </p>
-        <% end %>
+        <ul class="list-group">
+          <% @show.ShowDates.each do |date| %>
+              <li class="list-group-item">
+                  <%= date.date %>
+                  <% if date.soldOut %>
+                    <span class="font-red">Sold Out</span>
+                  <% else %>
+                    <span class="font-green">Still empty seats</span>
+                  <% end %>
+              </li>
+          <% end %>
+        </ul>
+      </blockquote>
+      <blockquote>
+        <h2 class="h3">Prices</h2>
+        <ul class="list-group">
+          <% @show.ShowPrices.each do |price| %>
+            <li class="list-group-item">
+                <strong><%= price.price %>:-</strong>
+                <%= price.description %>
+            </li>
+          <% end %>
+        </ul>
       </blockquote>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-md-12">
-      <blockquote>
-        <h2 class="h3">Prices</h2>
-        <% @show.ShowPrices.each do |price| %>
-            <p>
-              <%= price.price %>
-              <%= price.description %>
-            </p>
-        <% end %>
-      </blockquote>
-    </div>
-  </div>
 
   <div class="row">
     <div class="col-md-10">

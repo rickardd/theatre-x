@@ -16,6 +16,13 @@
             <p><%= co_operation.column_2 %></p>
           </blockquote>
           <blockquote>
+          <% if co_operation.on_page %>
+            <p class="font-green"><span class="glyphicon glyphicon-ok-circle"></span>Will be shown on the page</p>
+          <% else %>
+            <p class="font-red"><span class="glyphicon glyphicon-remove-circle"></span>This page is hidden</p>
+          <% end %>
+        </blockquote>
+          <blockquote>
             <%= image_tag co_operation.image, width: 250 %>
           </blockquote>
           <div class="btn-group">

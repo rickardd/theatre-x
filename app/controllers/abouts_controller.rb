@@ -72,6 +72,6 @@ class AboutsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def about_params
-      params.require(:about).permit(:column_1, :column_2, :column_3, :title, :image)
+      params.require(:about).permit(:column_1, :column_2, :column_3, :title, :image, :on_page)
     end
 end

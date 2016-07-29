@@ -70,6 +70,6 @@ class CoOperationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def co_operation_params
-      params.require(:co_operation).permit(:column_1, :column_2, :title, :image)
+      params.require(:co_operation).permit(:column_1, :column_2, :title, :image, :on_page)
     end
 end

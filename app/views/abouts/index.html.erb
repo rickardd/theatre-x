@@ -19,6 +19,13 @@
           <p><%= about.column_3 %></p>
         </blockquote>
         <blockquote>
+          <% if about.on_page %>
+            <p class="font-green"><span class="glyphicon glyphicon-ok-circle"></span>Will be shown on the page</p>
+          <% else %>
+            <p class="font-red"><span class="glyphicon glyphicon-remove-circle"></span>This page is hidden</p>
+          <% end %>
+        </blockquote>
+        <blockquote>
           <%= image_tag about.image, width: 250 %>
         </blockquote>
         <div class="btn-group">

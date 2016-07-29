@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160726144333) do
+ActiveRecord::Schema.define(version: 20160729190012) do
 
   create_table "abouts", force: :cascade do |t|
     t.text     "column_1"
@@ -19,8 +19,9 @@ ActiveRecord::Schema.define(version: 20160726144333) do
     t.text     "column_3"
     t.string   "title"
     t.string   "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.boolean  "on_page",    default: true
   end
 
   create_table "co_operations", force: :cascade do |t|
@@ -28,16 +29,18 @@ ActiveRecord::Schema.define(version: 20160726144333) do
     t.text     "column_2"
     t.string   "title"
     t.string   "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.boolean  "on_page",    default: true
   end
 
   create_table "courses", force: :cascade do |t|
     t.text     "column_1"
     t.text     "column_2"
     t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.boolean  "on_page",    default: true
   end
 
   create_table "show_dates", force: :cascade do |t|
@@ -62,8 +65,9 @@ ActiveRecord::Schema.define(version: 20160726144333) do
     t.text     "description"
     t.string   "image"
     t.boolean  "display"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "on_page",     default: true
   end
 
 end
