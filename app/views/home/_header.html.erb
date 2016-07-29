@@ -3,12 +3,23 @@
   <div class="logo">Teater På Gång</div>
   <nav class="menu">
     <ul class="menu__list clearfix">
-      <li class="menu__item js-scroll-link" data-target="section-1">Föreställingar</li>
-      <li class="menu__item js-scroll-link" data-target="section-3">Om Teatern</li>
+
+      <% if @shows.any? %>
+        <li class="menu__item js-scroll-link" data-target="section-1">Föreställingar</li>
+      <% end %>
+      <% if @abouts.on_page %>
+        <li class="menu__item js-scroll-link" data-target="section-3">Om Teatern</li>
+      <% end %>
       <li class="menu__item js-scroll-link" data-target="section-4">Boka</li>
-      <li class="menu__item js-scroll-link" data-target="section-5">Sammarbete</li>
-      <li class="menu__item js-scroll-link" data-target="section-6">Teater kurser</li>
-      <li class="menu__item js-scroll-link" data-target="section-7">Arkiv</li>
+      <% if @co_operation.on_page %>
+        <li class="menu__item js-scroll-link" data-target="section-5">Sammarbete</li>
+      <% end %>
+      <% if @course.on_page %>
+        <li class="menu__item js-scroll-link" data-target="section-6">Teater kurser</li>
+      <% end %>
+      <% if @archives.any? %>
+        <li class="menu__item js-scroll-link" data-target="section-7">Arkiv</li>
+      <% end %>
     </ul>
   </nav>
 </div>

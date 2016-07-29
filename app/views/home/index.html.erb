@@ -1,18 +1,21 @@
 
   <%= render 'header' %>
 
-  <%= render 'shows' %>
+  <% if @shows.any? %>
+    <%= render 'shows' %>
+  <% end %>
   <% if @abouts.on_page %>
     <%= render 'about' %>
   <% end %>
-  <% if @shows.first.on_page %>
     <%= render 'book' %>
-  <% end %>
   <% if @co_operation.on_page %>
     <%= render 'co_operation' %>
   <% end %>
   <% if @course.on_page %>
     <%= render 'courses' %>
   <% end %>
-  <%= render 'archives' %>
+  <% if @archives.any? %>
+    <%= render 'archives' %>
+  <% end %>
+
   <%= render 'footer' %>
