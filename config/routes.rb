@@ -1,28 +1,8 @@
 Rails.application.routes.draw do
 
-  # devise_for :users
-
-  # devise_scope :user do
-  #   post 'admin', to: 'devise/sessions#new', as: :new_user_session
-  #   post 'admin', to: ' devise/sessions#create', as: :user_session
-  #   delete 'admin', to: 'devise/sessions#destroy', as: :destroy_user_session
-  # end
-
-
   devise_for :users,  skip: [ :registrations, :password ],
                       :path => '',
                       :path_names => {:sign_in => 'login', :sign_out => 'logout'}
-
-  # devise_scope :user do
-  #   resource(:session ),
-  #     only: [:edit, :update],
-  #     path: 'users',
-  #     path_names: { new: 'sign_up' },
-  #     controller: 'devise/registrations',
-  #     as: :user_registration do
-  #     get :cancel
-  #   end
-  # end
 
   # ToDo: change path name to edit_date
   get 'shows/:show_id/dates/edit' => 'showdates#edit', as: :show_date
