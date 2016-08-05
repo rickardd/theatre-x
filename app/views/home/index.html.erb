@@ -4,14 +4,14 @@
   <% if @shows.any? %>
     <%= render 'shows' %>
   <% end %>
-  <% if @abouts.on_page %>
+  <% if @abouts && @abouts.on_page %>
     <%= render 'about' %>
   <% end %>
     <%= render 'book' %>
-  <% if @co_operation.on_page %>
+  <% if @co_operation && @co_operation.on_page %>
     <%= render 'co_operation' %>
   <% end %>
-  <% if @course.on_page %>
+  <% if @course && @course.on_page %>
     <%= render 'courses' %>
   <% end %>
   <% if @archives.any? %>

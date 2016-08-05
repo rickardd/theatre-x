@@ -6,14 +6,14 @@
       <% if @shows.any? %>
         <li class="menu__item js-scroll-link" data-target="section-1">Föreställingar</li>
       <% end %>
-      <% if @abouts.on_page %>
+      <% if @abouts && @abouts.on_page %>
         <li class="menu__item js-scroll-link" data-target="section-3">Om Teatern</li>
       <% end %>
       <li class="menu__item js-scroll-link" data-target="section-4">Boka</li>
-      <% if @co_operation.on_page %>
+      <% if @co_operation && @co_operation.on_page %>
         <li class="menu__item js-scroll-link" data-target="section-5">Sammarbete</li>
       <% end %>
-      <% if @course.on_page %>
+      <% if @course && @course.on_page %>
         <li class="menu__item js-scroll-link" data-target="section-6">Teater kurser</li>
       <% end %>
       <% if @archives.any? %>

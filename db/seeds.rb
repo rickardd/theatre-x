@@ -11,9 +11,9 @@
 #     Föreställningar under februari – maj", image:"/example2.png", display:true)
 # Show.create(title:"En lång vandring", description:"En familjeföreställning där publiken vandrar med en skådespelare och under olika platser får scener uppspelade. Ett stort öde vilar över staden och det är du som publik som listar ut gåtan och bestämmer slutet.", image:"/example2.png", display:true)
 
-Show.create(title:"En olycks saga", description:"en barn teater från 3 år och uppåt. Var med och lös mysteriet  med detektivtrollet. En knasig historia och Bäverns bortsprungna ben och råddjurets bortappade ärr mm. En musikteater där barnen är med och löser fallet.
-    Föreställningar under februari – maj", image:"/example2.png", display:false)
-Show.create(title:"Öken promenad i Samehult", description:"En familjeföreställning där publiken vandrar med en skådespelare och under olika platser får scener uppspelade. Ett stort öde vilar över staden och det är du som publik som listar ut gåtan och bestämmer slutet.", image:"/example2.png", display:false)
+# Show.create(title:"En olycks saga", description:"en barn teater från 3 år och uppåt. Var med och lös mysteriet  med detektivtrollet. En knasig historia och Bäverns bortsprungna ben och råddjurets bortappade ärr mm. En musikteater där barnen är med och löser fallet.
+#     Föreställningar under februari – maj", image:"/example2.png", display:false)
+# Show.create(title:"Öken promenad i Samehult", description:"En familjeföreställning där publiken vandrar med en skådespelare och under olika platser får scener uppspelade. Ett stort öde vilar över staden och det är du som publik som listar ut gåtan och bestämmer slutet.", image:"/example2.png", display:false)
 
 # ShowCalendar.create(date: '21 May 2017', soldOut: true, show_id: 2)
 # ShowCalendar.create(date: '28 May 2017', soldOut: true, show_id: 2)
