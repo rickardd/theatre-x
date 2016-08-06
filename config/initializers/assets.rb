@@ -16,4 +16,4 @@ Rails.application.config.assets.precompile += %w( application_admin.css )
 # config.assets.precompile += %w( .svg .eot .woff .ttf )
 # config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
 
-config.assets.precompile << /\.(?:svg|eot|woff|ttf)\z/
+Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|ttf)\z/
