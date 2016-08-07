@@ -39,7 +39,6 @@ class ShowdatesController < ApplicationController
 
     # if @date.update( date: "new date", soldOut: true )
     if @date.update_all( date_params )
-      debugger
       flash[:success] = "The date was successfully updated"
       redirect_to show_path( id: params[:show_id] )
     else

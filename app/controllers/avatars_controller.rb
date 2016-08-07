@@ -27,7 +27,7 @@ class AvatarsController < ApplicationController
   # POST /avatars
   # POST /avatars.json
   def create
-    debugger
+
     @avatar = Avatar.new(avatar_params)
 
     respond_to do |format|
