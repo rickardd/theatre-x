@@ -1,0 +1,15 @@
+<%= render 'admin/error_messages', obj: @avatar  %>
+
+<div class="row">
+  <div class="col-md-10 col-md-offset-2">
+    <h1 class="h1">Edit Avatar</h1>
+    <%= image_tag @avatar.image, width: 400 %>
+  </div>
+</div>
+
+<br>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', show_avatar_path %> |
+

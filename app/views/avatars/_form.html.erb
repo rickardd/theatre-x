@@ -1,0 +1,23 @@
+<%= form_for @avatar, url: show_avatar_path, html: { class: "form-horizontal"} do |f| %>
+
+  <%= hidden_field :avatar, :show_id, value: params[:show_id] %>
+
+  <div class="form-group">
+    <%= f.label :image, "Replace image", class: "col-md-2 control-label" %>
+    <div class="col-md-10">
+      <%= f.file_field :image, class: "form-control" %>
+    </div>
+  </div>
+  <!-- <div class="form-group">
+    <%#= f.label :show_id, class: "col-md-2 control-label" %>
+    <div class="col-md-10">
+      <%#= f.text_field :show_id, class: "form-control", placeholder: "Enter ID" %>
+    </div>
+  </div> -->
+  <div class="form-group">
+    <div class="col-md-10 col-md-offset-2">
+    <%= f.submit class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
+

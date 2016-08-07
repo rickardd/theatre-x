@@ -17,7 +17,7 @@
         <p><%= @show.description %></p>
       </blockquote>
       <blockquote>
-        <%= image_tag @show.image, width: 250 %>
+        <%= image_tag @show.avatar.image, width: 250 if @show.avatar %>
       </blockquote>
     </div>
 
@@ -76,6 +76,11 @@
       <%= link_to 'Create a price', new_show_price_path(@show), class: "btn btn-success" %>
       <% if @show.ShowPrices.count > 0 %>
         <%= link_to 'Edit prices', show_price_path( :show_id => @show.id ), class: "btn btn-primary" %>
+      <% end %>
+      <% if @show.avatar %>
+        <%= link_to 'Edit avatar', edit_show_avatar_path( :show_id => @show.id ), class: "btn btn-primary" %>
+      <% else %>
+        <%= link_to 'Add avatar', new_show_avatar_path( :show_id => @show.id ), class: "btn btn-success" %>
       <% end %>
 
       <%= link_to 'Destroy This Show', show_path(@show), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>

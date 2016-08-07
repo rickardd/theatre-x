@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160805104157) do
+ActiveRecord::Schema.define(version: 20160806222845) do
 
   create_table "abouts", force: :cascade do |t|
     t.text     "column_1"
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(version: 20160805104157) do
     t.datetime "updated_at",                null: false
     t.boolean  "on_page",    default: true
   end
+
+  create_table "avatars", force: :cascade do |t|
+    t.string "image"
+    t.string "show_id"
+  end
+
+  add_index "avatars", ["show_id"], name: "index_avatars_on_show_id", unique: true
 
   create_table "co_operations", force: :cascade do |t|
     t.text     "column_1"
@@ -50,6 +57,15 @@ ActiveRecord::Schema.define(version: 20160805104157) do
     t.datetime "updated_at", null: false
     t.integer  "show_id"
   end
+
+  create_table "show_images", force: :cascade do |t|
+    t.string   "image"
+    t.integer  "show_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "show_images", ["show_id"], name: "index_show_images_on_show_id"
 
   create_table "show_prices", force: :cascade do |t|
     t.integer  "price"

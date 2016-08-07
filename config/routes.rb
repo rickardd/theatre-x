@@ -24,7 +24,10 @@ Rails.application.routes.draw do
   resources :courses, except: [:show, :new, :create, :destroy]
   resources :co_operations, except: [:show, :new, :create, :destroy]
   resources :abouts, except: [:show, :new, :create, :destroy]
-  resources :shows
+
+  resources :shows do
+    resource :avatar
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -2,6 +2,7 @@ class Show < ActiveRecord::Base
 
   has_many :ShowDates
   has_many :ShowPrices
+  has_one :avatar
 
   validates_associated :ShowDates
   validates_associated :ShowPrices
@@ -17,8 +18,8 @@ class Show < ActiveRecord::Base
   validates :display,
             inclusion: { in: [true, false]}
 
-  validates :image,
-            presence: true
+  # validates :image,
+  #           presence: true
 
 
 
