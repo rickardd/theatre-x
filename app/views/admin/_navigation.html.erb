@@ -8,16 +8,16 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li <%= 'class=active' if current_page?(shows_path) %> >
-          <%= link_to "Shows", shows_path, class: "js-scroll-link", data: { target: "section-1"} %>
+          <%= link_to "Shows", shows_path %>
         </li>
         <li <%= 'class=active' if current_page?(courses_path) %> >
-          <%= link_to "Courses", courses_path, class: "js-scroll-link", data: { target: "section-2"} %>
+          <%= link_to "Courses", courses_path %>
         </li>
         <li <%= 'class=active' if current_page?(co_operations_path) %> >
-          <%= link_to "Co-Operations", co_operations_path, class: "js-scroll-link", data: { target: "section-3"} %>
+          <%= link_to "Co-Operations", co_operations_path %>
         </li>
         <li <%= 'class=active' if current_page?(abouts_path) %> >
-          <%= link_to "About", abouts_path, class: "js-scroll-link", data: { target: "section-4"} %>
+          <%= link_to "About", abouts_path %>
         </li>
       </ul>
 
