@@ -20,13 +20,10 @@
         </blockquote>
         <blockquote>
           <% if about.on_page %>
-            <p class="font-green"><span class="glyphicon glyphicon-ok-circle"></span>Will be shown on the page</p>
+            <p class="font-green"><span class="glyphicon glyphicon-ok-circle"></span>Detta block visas på sidan</p>
           <% else %>
             <p class="font-red"><span class="glyphicon glyphicon-remove-circle"></span>This page is hidden</p>
           <% end %>
-        </blockquote>
-        <blockquote>
-          <%= image_tag about.image, width: 250 %>
         </blockquote>
         <div class="btn-group">
           <%= link_to 'Edit', edit_about_path(about), class: "btn btn-primary" %>

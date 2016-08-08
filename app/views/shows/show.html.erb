@@ -36,7 +36,7 @@
         </div>
       </blockquote>
       <blockquote>
-        <h2 class="h3">Dates</h2>
+        <h2 class="h3">Datum</h2>
         <ul class="list-group">
           <% @show.ShowDates.each do |date| %>
               <li class="list-group-item">
@@ -51,7 +51,7 @@
         </ul>
       </blockquote>
       <blockquote>
-        <h2 class="h3">Prices</h2>
+        <h2 class="h3">Priser</h2>
         <ul class="list-group">
           <% @show.ShowPrices.each do |price| %>
             <li class="list-group-item">
@@ -68,23 +68,23 @@
   <div class="row">
     <div class="col-md-10">
       <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
-      <%= link_to 'Edit show', edit_show_path(@show), class: "btn btn-primary" %>
-      <%= link_to 'Create a date', new_show_date_path(@show), class: "btn btn-success" %>
+      <%= link_to 'Redigera pjäs', edit_show_path(@show), class: "btn btn-primary" %>
+      <%= link_to 'Skapa datum', new_show_date_path(@show), class: "btn btn-success" %>
       <% if @show.ShowDates.count > 0 %>
-        <%= link_to 'Edit dates', show_date_path( :show_id => @show.id ), class: "btn btn-primary" %>
+        <%= link_to 'Redigera datum', show_date_path( :show_id => @show.id ), class: "btn btn-primary" %>
       <% end %>
-      <%= link_to 'Create a price', new_show_price_path(@show), class: "btn btn-success" %>
+      <%= link_to 'Skapa ett pris', new_show_price_path(@show), class: "btn btn-success" %>
       <% if @show.ShowPrices.count > 0 %>
-        <%= link_to 'Edit prices', show_price_path( :show_id => @show.id ), class: "btn btn-primary" %>
+        <%= link_to 'Redigera pris', show_price_path( :show_id => @show.id ), class: "btn btn-primary" %>
       <% end %>
       <% if @show.avatar %>
-        <%= link_to 'Edit avatar', edit_show_avatar_path( :show_id => @show.id ), class: "btn btn-primary" %>
+        <%= link_to 'Redigera bild', edit_show_avatar_path( :show_id => @show.id ), class: "btn btn-primary" %>
       <% else %>
-        <%= link_to 'Add avatar', new_show_avatar_path( :show_id => @show.id ), class: "btn btn-success" %>
+        <%= link_to 'Lägg till bild', new_show_avatar_path( :show_id => @show.id ), class: "btn btn-success" %>
       <% end %>
 
-      <%= link_to 'Destroy This Show', show_path(@show), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
-      <%= link_to 'View All shows', shows_path, class: "btn btn-default" %>
+      <%= link_to 'Ta bort pjäs', show_path(@show), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Visa lista av alla shower', shows_path, class: "btn btn-default" %>
       </div>
     </div>
   </div>
