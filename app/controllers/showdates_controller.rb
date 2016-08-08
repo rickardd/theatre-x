@@ -10,6 +10,7 @@ class ShowdatesController < ApplicationController
 
     @date = ShowDate.new( date_params )
     puts '------------------------------------'
+    puts params
     puts date_params
     puts @date.soldOut
     puts @date.date

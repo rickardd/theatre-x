@@ -5,9 +5,9 @@ class ShowDate < ActiveRecord::Base
             presence: true,
             length: { in: 10..11}
 
-  validates :soldOut,
-            presence: true
-            # inclusion: { in: [ true, false ] }
+  # validates :soldOut,
+            #presence: true
+            #inclusion: { in: [ "true", "false" ] }
 
 end
 
