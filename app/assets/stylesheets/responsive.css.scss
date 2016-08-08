@@ -1,0 +1,25 @@
+@media (max-width: 1040px) {
+  .section {
+
+  }
+
+  .header__content{
+    width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+
+  .md-full-width{
+    width: 100%
+  }
+  .md-half-width{
+    width: 50%
+  }
+
+  .md-full-width{
+    &.column{
+      margin-bottom: 24px;
+    }
+  }
+}

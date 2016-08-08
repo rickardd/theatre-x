@@ -1,21 +1,22 @@
 
   <%= render 'header' %>
 
-  <% if @shows.any? %>
-    <%= render 'shows' %>
-  <% end %>
-  <% if @abouts && @abouts.on_page %>
-    <%= render 'about' %>
-  <% end %>
-    <%= render 'book' %>
-  <% if @co_operation && @co_operation.on_page %>
-    <%= render 'co_operation' %>
-  <% end %>
-  <% if @course && @course.on_page %>
-    <%= render 'courses' %>
-  <% end %>
-  <% if @archives.any? %>
-    <%= render 'archives' %>
-  <% end %>
-
+  <div class="main-container">
+    <% if @shows.any? %>
+      <%= render 'shows' %>
+    <% end %>
+    <% if @abouts && @abouts.on_page %>
+      <%= render 'about' %>
+    <% end %>
+      <%= render 'book' %>
+    <% if @co_operation && @co_operation.on_page %>
+      <%= render 'co_operation' %>
+    <% end %>
+    <% if @course && @course.on_page %>
+      <%= render 'courses' %>
+    <% end %>
+    <% if @archives.any? %>
+      <%= render 'archives' %>
+    <% end %>
+  </div>
   <%= render 'footer' %>

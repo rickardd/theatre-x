@@ -11,10 +11,10 @@
     <% if !show.display %>
       <article class="sub-section">
         <div class="grid clearfix">
-          <div class="column column--4 column--last typography">
+          <div class="column column--4 column--last md-full-width typography">
             <%= image_tag show.avatar.image, alt: show.title, class: "soft-edges full-width"  if (show.avatar && show.avatar.image? ) %>
           </div>
-          <div class="column column--8 column--first typography">
+          <div class="column column--8 column--first md-full-width typography">
             <heading>
               <h1 class="h1"><%= show.title %></h1>
             </heading>
