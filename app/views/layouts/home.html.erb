@@ -6,7 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body class="body" data-no-turbolink>
+<body class="body">
 
 <%= yield %>
 
@@ -22,31 +22,7 @@
 
   <script>
 
-    $(".js-scroll-link").click( function( event ){
-      event.preventDefault();
 
-      $(".section").removeClass("fadeOut");
-      var targetId = "#" + $(this).data("target");
-      // $(".section").removeClass("fadeOut").not( targetId ).addClass("fadeOut");
-      var $fadingSections = $(".section").not( targetId );
-
-      $fadingSections.addClass("fadeOut");
-
-      // $fadingSections[0].addEventListener("animationend", function(){
-      $fadingSections.eq(0).one("webkitAnimationEnd oanimationend oAnimationEnd msAnimationEnd Animationend", {},
-        function( event ){
-          console.log("animationend");
-          $(".section").removeClass("fadeOut")
-        }, false);
-
-      $('html, body').animate({
-          scrollTop: $( targetId ).offset().top
-       },
-       500,
-       "swing",
-       function(){
-       });
-    });
 
   </script>
 
