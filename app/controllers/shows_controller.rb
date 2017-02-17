@@ -37,6 +37,7 @@ class ShowsController < ApplicationController
 
   # GET /shows/1/edit
   def edit
+    @images = Dir.glob("app/assets/images/*.jpg")
 
   end
 
