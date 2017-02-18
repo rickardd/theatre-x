@@ -50,6 +50,10 @@
     .master-wrapper{
       width: 400px;
     }
+    .main-container {
+        padding-left: 0;
+        padding-right: 0;
+    }
 
     .logo{
       font-size: 34px;
@@ -100,4 +104,18 @@
     }
 
 
+}
+
+
+@media (max-width: 430px) {
+ .master-wrapper{
+    width: 320px;
+  }
+  .description-term {
+    width: 184px;
+    padding-left: 0;
+  }
+  .price {
+    padding-left: 0;
+  }
 }
