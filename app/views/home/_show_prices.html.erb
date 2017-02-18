@@ -8,7 +8,7 @@
       <% else %>
         <span class="price__value price__value--small"><%= price.price %>:-</span>
       <% end %>
-        <%= price.description %>
+        <span class="price__description"><%= price.description %></span>
       </div>
     <% end %>
     <% if prices.none? %>

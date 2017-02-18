@@ -2,8 +2,8 @@ class ShowDate < ActiveRecord::Base
   belongs_to :show
 
   validates :date,
-            presence: true,
-            length: { in: 10..11}
+            presence: true
+            # length: { in: 10..11}
 
   # validates :soldOut,
             #presence: true

@@ -8,5 +8,5 @@ class ShowPrice < ActiveRecord::Base
 
   validates :description,
             presence: true,
-            length: { minimum: 10, maximum: 35 }
+            length: { minimum: 5, maximum: 35 }
 end

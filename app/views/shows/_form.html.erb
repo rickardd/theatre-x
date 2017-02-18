@@ -1,15 +1,22 @@
 <%= form_for @show, html: { class: "form-horizontal"} do |f| %>
 
 
-  <ul>
-    <% @images.each do |image| %>
-       <%#= collection_select(:user, :role_id, @roles, :id, :role_title, {:prompt => true}) %>
-      <%#= image_tag image.gsub("app/assets/images/", "") %>
-        <li>
-          <%= image.gsub("app/assets/images/", "") %>
-        </li>
-    <% end %>
-  </ul>
+  <div class="form-group">
+    <label class="col-md-2 control-label" for="show_title">Bilder</label>
+    <div class="col-md-10">
+      <ul class="flex clear-list">
+        <% @images.each do |image| %>
+           <%#= collection_select(:user, :role_id, @roles, :id, :role_title, {:prompt => true}) %>
+          <%#= image_tag image.gsub("app/assets/images/", "") %>
+            <li class="flex-child">
+              <%= image_tag(image.gsub("app/assets/images/", ""), width: "150") %> <br>
+              <%= image.gsub("app/assets/images/", "") %>
+            </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
 
 
   <div class="form-group">
@@ -30,7 +37,7 @@
   <div class="form-group">
     <%= f.label :image, class: "col-md-2 control-label" %>
     <div class="col-md-10">
-      <%= f.text_field :image, class: "form-control", placeholder: "image of show" %>
+      <%= f.text_field :image, class: "form-control", placeholder: "Add the name of chosen image above" %>
     </div>
   </div>
 
