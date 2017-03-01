@@ -42,6 +42,7 @@ class AboutsController < ApplicationController
   # PATCH/PUT /abouts/1
   # PATCH/PUT /abouts/1.json
   def update
+
     respond_to do |format|
       if @about.update(about_params)
         flash[:success] = "About was successfully updated."
@@ -72,6 +73,6 @@ class AboutsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def about_params
-      params.require(:about).permit(:column_1, :column_2, :column_3, :title, :image, :on_page)
+      params.require(:about).permit(:column_1, :column_2, :column_3, :worker_1, :worker_2, :title, :image, :on_page)
     end
 end

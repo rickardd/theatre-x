@@ -563,17 +563,18 @@ dl{ box-sizing: border-box; }
   margin-right: 6px;
 }
 .texticon__text{
-  font-size: 12px;
+  font-size: 14px;
 }
 
 
 .profile-section{
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 .profile{
-  text-align: center;
-  margin-right: 24px;
+  flex-basis: 30%;
+  text-align: space;
+  // margin-right: 24px;
   &:last-child{
     margin-right: 0;
   }
