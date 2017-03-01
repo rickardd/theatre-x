@@ -9,9 +9,9 @@
 }
 
 
-$color-orange: #ad500c; // orange
+// $color-orange: #ad500c; // orange
 // $color-orange: #4a84b7; // blue
-// $color-orange: #73080c; // red
+$color-orange: #73080c; // red
 //
 $color-grey-dark: #313131;
 
@@ -22,7 +22,7 @@ html,body{
 .body{
   /*background-image: url('/Users/rickarddahlstrom/web-projects/Anja/img/back_22.jpg');
   background-size: cover;*/
-  padding-bottom: 100px;
+  padding-bottom: 50px;
   background-color: $color-orange;
   font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
 
@@ -499,15 +499,18 @@ dl{ box-sizing: border-box; }
   position: fixed;
   bottom: -7px;
   width: 100%;
-  background-color: #f5deb3;
-  color: #333;
-  border-top: 1px solid #b9a173;
+  background-color: #c1e2ea;
+  color: #0b4b5a;
+  border-top: 1px solid #166c80;
+  padding-bottom: 6px;
 }
 
 .footer__content{
-  width: 800px;
-  margin: 0 auto;
-  text-align: center;
+  // width: 800px;
+  // margin: 0 auto;
+  // text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .vertical-list{
@@ -564,26 +567,33 @@ dl{ box-sizing: border-box; }
 }
 
 
-
-
-
+.profile-section{
+  display: flex;
+  justify-content: center;
+}
 .profile{
-
+  text-align: center;
+  margin-right: 24px;
+  &:last-child{
+    margin-right: 0;
+  }
 }
 .profile__icon,
 .profile__text{
-  float: left;
+  // float: left;
 }
 .profile__icon{
-  display: table-cell;
-  margin-right: 24px;
-  position: absolute;
+  // display: table-cell;
+  // margin-right: 24px;
+  // position: absolute;
+  margin: 0 auto 12px;
+  width: 100px;
 }
 .profile__text{
-  display: table;
-  height: 100px;
-  padding-left: 124px;
-  max-width: 650px;
+  // display: table;
+  // height: 100px;
+  // padding-left: 124px;
+  // max-width: 650px;
 }
 
 .profile__text p{
@@ -674,3 +684,5 @@ dl{ box-sizing: border-box; }
   flex: 1;
   padding: 32px 6px 0;
 }
+
+

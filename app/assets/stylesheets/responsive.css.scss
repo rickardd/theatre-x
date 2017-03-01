@@ -43,6 +43,21 @@
   .price__description {
     padding-right: 24px;
   }
+
+  .profile-section{
+    flex-wrap: wrap;
+  }
+
+  .profile{
+    &:first-child{
+      width: 100%;
+      margin-bottom: 24px;
+    }
+    &:nth-child(2),
+    &:nth-child(3){
+      flex: 1;
+    }
+  }
 }
 
 
@@ -102,6 +117,14 @@
         margin-bottom: 24px;
       }
     }
+
+    .profile-section{
+      display: block;
+    }
+    .profile{
+      margin: 0 0 24px 0;
+    }
+
 
 
 }
