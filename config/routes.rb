@@ -17,6 +17,12 @@ Rails.application.routes.draw do
   post 'shows/:show_id/prices/create' => 'show_prices#create', as: :create_show_price
   delete 'shows/:show_id/prices/destroy' => 'show_prices#destroy', as: :destroy_show_price
 
+  get 'shows/:show_id/writers/edit' => 'show_writers#edit', as: :show_writers
+  patch 'shows/:show_id/writers/update' => 'show_writers#update', as: :update_show_writers
+  get 'shows/:show_id/writers/new' => 'show_writers#new', as: :new_show_writers
+  post 'shows/:show_id/writers/create' => 'show_writers#create', as: :create_show_writers
+  delete 'shows/:show_id/writers/destroy' => 'show_writers#destroy', as: :destroy_show_writers
+
 
   # resources :show_prices, path: "/shows/:id/price"
 

@@ -687,3 +687,30 @@ dl{ box-sizing: border-box; }
 }
 
 
+
+
+.show_info{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.show_info dd {
+    flex-basis: 30%;
+    font-weight: normal;
+    margin: 0;
+    &:after{
+      content: ":"
+    }
+}
+
+.show_info dt {
+    flex-basis: 70%;
+}
+
+.show_info dd,
+.show_info dt{
+  border-bottom: 1px solid #ccc;
+  padding: 2px 0;
+  font-size: 14px;
+}

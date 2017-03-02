@@ -1,0 +1,8 @@
+<% if writers %>
+  <% writers.each do |writer| %>
+    <dl class="show_info">
+      <dd><%= writer.field %></dd>
+      <dt><%= writer.name %></dt>
+    </dl>
+  <% end %>
+<% end %>

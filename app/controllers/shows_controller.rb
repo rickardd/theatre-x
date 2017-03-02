@@ -21,24 +21,29 @@ class ShowsController < ApplicationController
   # POST /shows
   # POST /shows.json
   def create
-    @show = Show.new(show_params)
 
-    respond_to do |format|
-      if @show.save
-        flash[:success] = "Show was successfully created."
-        format.html { redirect_to @show }
-        format.json { render :show, status: :created, location: @show }
-      else
-        format.html { render :new }
-        format.json { render json: @show.errors, status: :unprocessable_entity }
-      end
-    end
+    puts "--***************--"
+    puts "--***************--"
+    puts "--***************--"
+    puts show_params
+    # @show = Show.new(show_params)
+
+    # respond_to do |format|
+    #   if @show.save
+    #     flash[:success] = "Show was successfully created."
+    #     format.html { redirect_to @show }
+    #     format.json { render :show, status: :created, location: @show }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @show.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # GET /shows/1/edit
   def edit
     @images = Dir.glob("app/assets/images/*.jpg")
-
+    @writers = @show.ShowWriters
   end
 
   # PATCH/PUT /shows/1
@@ -74,6 +79,6 @@ class ShowsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def show_params
-      params.require(:show).permit(:title, :description, :image, :display)
+      params.require(:show).permit(:title, :description, :image, :display, :something)
     end
 end

@@ -2,6 +2,7 @@ class Show < ActiveRecord::Base
 
   has_many :ShowDates
   has_many :ShowPrices
+  has_many :ShowWriters
   has_one :avatar
 
   validates_associated :ShowDates

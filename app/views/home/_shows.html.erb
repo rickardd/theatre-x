@@ -21,13 +21,16 @@
               <h1 class="h2"><%= show.title %></h1>
             </heading>
             <p><%= show.description %></p>
+            <% if show.ShowWriters.count > 0 || show.ShowWriters.count > 0 %>
+              <%= render 'show_writers', writers: show.ShowWriters %>
+            <% end %>
           </div>
           <% if show.ShowDates.count > 0 || show.ShowPrices.count > 0 %>
-              <div class="calendar clearfix">
-                <%= render 'show_dates', dates: show.ShowDates %>
-                <%= render 'show_prices', prices: show.ShowPrices %>
-              </div>
-            <% end %>
+            <div class="calendar clearfix">
+              <%= render 'show_dates', dates: show.ShowDates %>
+              <%= render 'show_prices', prices: show.ShowPrices %>
+            </div>
+          <% end %>
         </div>
       </article>
     <% end %>
