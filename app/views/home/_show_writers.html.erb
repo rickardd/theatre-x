@@ -1,8 +1,8 @@
 <% if writers %>
-  <% writers.each do |writer| %>
-    <dl class="show_info">
+  <dl class="show_info">
+    <% writers.each do |writer| %>
       <dd><%= writer.field %></dd>
       <dt><%= writer.name %></dt>
-    </dl>
-  <% end %>
+    <% end %>
+  </dl>
 <% end %>
